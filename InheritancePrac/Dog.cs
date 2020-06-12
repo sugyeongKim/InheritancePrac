@@ -6,14 +6,9 @@ using System.Threading.Tasks;
 
 namespace InheritancePrac
 {
-    class Dog
+    class Dog : Animal
     {
-        public int Age { get; set; }
-        public string Color { get; set; }
-        public Dog() { this.Age = 0; }
-
-        public void Eat() { Console.WriteLine("냠냠냠"); }
-        public void sleep() { Console.WriteLine("Zzz"); }
-        public void bark() { Console.WriteLine("멍멍"); }
+        
+        public void Bark() { Console.WriteLine("멍멍"); }
     }
 }

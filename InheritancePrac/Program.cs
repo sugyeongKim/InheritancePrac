@@ -10,23 +10,26 @@ namespace InheritancePrac
     {
         static void Main(string[] args)
         {
-            List<Dog> dogs =
-                new List<Dog> { new Dog(), new Dog(), new Dog() };
-            List<Cat> cats =
-                new List<Cat> { new Cat(), new Cat(), new Cat() };
+            List<Animal> animals =
+                new List<Animal>
+                {
+                    new Dog(), new Cat(), new Cat(),
+                    new Dog(), new Dog(), new Cat()
+                };
 
-            foreach( Dog dog in dogs)
+            foreach( var items in animals)
             {
-                dog.Eat();
-                dog.sleep();
-                dog.bark();
-            }
+                items.Eat();
+                items.Sleep();
 
-            foreach (Cat cat in cats)
-            {
-                cat.Eat();
-                cat.sleep();
-                cat.Meow();
+                if(items is Dog)
+                {
+                    ((Dog)items).Bark();
+                }else if(items is Cat)
+                {
+                    ((Cat)items).Meow();
+                }
+
             }
         }
     }
